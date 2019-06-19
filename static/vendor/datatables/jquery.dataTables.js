@@ -11382,13 +11382,13 @@
 				 *      $('#example').dataTable( {
 				 *        "language": {
 				 *          "paginate": {
-				 *            "next": "Next page"
+				 *            "next": "Következő oldal"
 				 *          }
 				 *        }
 				 *      } );
 				 *    } );
 				 */
-				"sNext": "Next",
+				"sNext": "Következő",
 	
 	
 				/**
@@ -11707,7 +11707,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sSearch": "Search:",
+			"sSearch": "Keresés:",
 	
 	
 			/**
