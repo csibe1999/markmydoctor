@@ -12,6 +12,9 @@ module.exports = function (app) {
     
     app.get('/doctor',
         renderMW(objRepo, 'doctor'));
+    
+    app.get('/new',
+        renderMW(objRepo,'new'));
 
     
     app.get('/login',

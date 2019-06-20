@@ -16,7 +16,6 @@ module.exports = function (objectrepository) {
             }
             if (user.password === req.body.password) {
                 /* req.session.email=req.body.email; */
-                //res.locals.user=user;
                 console.log("bent");
                 return res.redirect('/');
             }
