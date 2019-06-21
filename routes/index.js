@@ -1,6 +1,6 @@
 const renderMW = require('../middleware/renderMW');
 const registeruserMW = require('../middleware/user/registeruserMW.js');
-const loginuserMW = require('../middleware/loginuserMW.js');
+const loginuserMW = require('../middleware/user/loginuserMW.js');
 
 const Usermodel = require('../models/user');
 
