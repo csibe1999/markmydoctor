@@ -1,4 +1,8 @@
 const requireOption = require('../requireOption');
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+const myPlaintextPassword = 's0/\/\P4$$w0rD';
+const someOtherPlaintextPassword = 'not_bacon';
 
 module.exports = function (objectrepository) {
 
@@ -13,7 +17,6 @@ module.exports = function (objectrepository) {
         if(req.body.password===req.body.repassword)
         {
             Usermodel.findOne({email: req.body.email}, (err, user) => {
-                console.log(user);
                 if (user) {
                     console.log("van ilyen user");
                     return res.redirect('/register'); //////////////////////////////////////////////////////////////
@@ -23,10 +26,17 @@ module.exports = function (objectrepository) {
                     console.log('reg');
                     res.locals.user = new Usermodel();
                     res.locals.user.email = req.body.email;
-                    res.locals.user.password = req.body.password;
+
+                    //res.locals.user.password = req.body.password;
+                    
                     res.locals.user.username = "user-1"
-                    res.locals.user.save();
-                    return res.redirect('/');
+                    bcrypt.hash(req.body.password, saltRounds, function(err, hash) {
+                        res.locals.user.password=hash;
+                        res.locals.user.save();
+                        return res.redirect('/');
+                    });
+
+                    
                 }
             });
         }
