@@ -17,6 +17,7 @@ module.exports = function (objectrepository) {
         res.locals.doctor.wait = req.body.wait;
         res.locals.doctor.rate = req.body.rate;
         res.locals.doctor.cont = req.body.cont;
+        res.locals.doctor.comment = req.body.comment;
         res.locals.doctor.save();
         return res.redirect('/');
     };

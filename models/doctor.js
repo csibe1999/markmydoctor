@@ -6,6 +6,7 @@ const Doctor= db.model('Doctor',{
     spec: String,
     wait: String,
     rate: String,
-    cont: String
+    cont: String,
+    comment :String
 });
 module.exports=Doctor;
