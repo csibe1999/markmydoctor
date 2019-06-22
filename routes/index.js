@@ -1,12 +1,15 @@
 const renderMW = require('../middleware/renderMW');
 const registeruserMW = require('../middleware/user/registeruserMW.js');
 const loginuserMW = require('../middleware/user/loginuserMW.js');
+const savedoctorMW = require('../middleware/doctor/savedoctorMW.js');
 
 const Usermodel = require('../models/user');
+const Doctormodell = require('../models/doctor');
 
 module.exports = function (app) {
     const objRepo = {
-        Usermodel:Usermodel
+        Usermodel:Usermodel,
+        Doctormodell:Doctormodell
     };
 
     
@@ -15,6 +18,8 @@ module.exports = function (app) {
     
     app.get('/new',
         renderMW(objRepo,'new'));
+    app.post('/new',
+        savedoctorMW(objRepo));
 
     
     app.get('/login',
