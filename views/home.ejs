@@ -1,144 +1,128 @@
 <%- include head%>
-    <title>Doctors</title>
+<title>Doctors</title>
 <%- include body%>
 
-          <!-- Begin Page Content -->
-          <div class="container-fluid">
-            <!-- DataTales Example -->
-            <div class="card shadow mb-4">
-              <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Doctors</h6>
-              </div>
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table
-                    class="table table-bordered"
-                    id="dataTable"
-                    width="100%"
-                    cellspacing="0"
-                  >
-                    <thead>
-                      <tr>
-                        <th>ORVOS NEVE</th>
-                        <th>Szakterület</th>
-                        <th>Város</th>
-                        <th>Kapcsolat</th>
-                        <th>Árszabás</th>
-                        <th>Értékelés</th>
-                      </tr>
-                    </thead>
-                    <tfoot>
-                      <tr>
-                        <th>ORVOS NEVE</th>
-                        <th>Szakterület</th>
-                        <th>Város</th>
-                        <th>Kapcsolat</th>
-                        <th>Árszabás</th>
-                        <th>Értékelés</th>
-                      </tr>
-                    </tfoot>
-                    <tbody>
-                        <tr >
-                        <td><a style="display:block; color:#858796; text-decoration:none;" href="doctor">Tiger Nixon</a></td>
-                        <td><a style="display:block; color:#858796; text-decoration:none;" href="doctor">Nőgyógyász</a></td>
-                        <td><a style="display:block; color:#858796; text-decoration:none;" href="doctor">Edinburgh</a></td>
-                        <td><a style="display:block; color:#858796; text-decoration:none;" href="doctor">+36201234567</a></td>
-                        <td><a style="display:block; color:#858796; text-decoration:none;" href="doctor">Olcsó</a></td>
-                        <td><a style="display:block; color:#858796; text-decoration:none;" href="doctor">4.5</a></td>
-                      </tr>
-                      <tr>
-                        
-                          <td><a style="display:block; color:#858796; text-decoration:none;" href="doctor">Garrett Winters</a></td>
-                          <td><a style="display:block; color:#858796; text-decoration:none;" href="doctor">Sebész</a></td>
-                          <td><a style="display:block; color:#858796; text-decoration:none;" href="doctor">Tokyo</a></td>
-                          <td><a style="display:block; color:#858796; text-decoration:none;" href="doctor">+36201234567</a></td>
-                          <td><a style="display:block; color:#858796; text-decoration:none;" href="doctor">Drága</a></td>
-                          <td><a style="display:block; color:#858796; text-decoration:none;" href="doctor">2.4</a></td>
-                        </a>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- /.container-fluid -->
-        </div>
-        <!-- End of Main Content -->
-
-        <!-- Footer -->
-        <footer class="sticky-footer bg-white">
-          <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-              <span>Copyright &copy; Your Website 2019</span>
-            </div>
-          </div>
-        </footer>
-        <!-- End of Footer -->
-      </div>
-      <!-- End of Content Wrapper -->
+<!-- Begin Page Content -->
+<div class="container-fluid">
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Doctors</h6>
     </div>
-    <!-- End of Page Wrapper -->
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>Orvos neve</th>
+              <th>Szakterület</th>
+              <th>Átlagos várakozási idő (nap)</th>
+              <th>Átlag Elégedettség</th>
+              <th>Telefon</th>
+              <th>Komment</th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <th>Orvos neve</th>
+              <th>Szakterület</th>
+              <th>Átlagos várakozási idő (nap)</th>
+              <th>Átlag Elégedettség</th>
+              <th>Telefon</th>
+              <th>Komment</th>
+            </tr>
+          </tfoot>
+          <tbody>
+            
+            <%doctor.forEach(function (value) {%>
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fas fa-angle-up"></i>
-    </a>
+            
+            
+            <tr>
+              <td><a style="display:block; color:#858796; text-decoration:none;"
+                  href="doctor/<%=value.id%>"><%=value.name%></a></td>
+              <td><a style="display:block; color:#858796; text-decoration:none;"
+                  href="doctor/<%=value.id%>"><%=value.spec%></a></td>
+              <td><a style="display:block; color:#858796; text-decoration:none;"
+                  href="doctor/<%=value.id%>"><%=value.wait%></a></td>
+              <td><a style="display:block; color:#858796; text-decoration:none;"
+                  href="doctor/<%=value.id%>"><%=value.sumrate%>%</a></td>
+              <td><a style="display:block; color:#858796; text-decoration:none;"
+                  href="doctor/<%=value.id%>"><%=value.cont%></a></td>
+              <td><a style="display:block; color:#858796; text-decoration:none;"
+                  href="doctor/<%=value.id%>"><%=value.comment%></a></td>
+            </tr>
+            <%});%>
 
-    <!-- Logout Modal-->
-    <div
-      class="modal fade"
-      id="logoutModal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-            <button
-              class="close"
-              type="button"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            Select "Logout" below if you are ready to end your current session.
-          </div>
-          <div class="modal-footer">
-            <button
-              class="btn btn-secondary"
-              type="button"
-              data-dismiss="modal"
-            >
-              Cancel
-            </button>
-            <a class="btn btn-primary" href="login">Logout</a>
-          </div>
-        </div>
+          </tbody>
+        </table>
       </div>
     </div>
+  </div>
+</div>
+<!-- /.container-fluid -->
+</div>
+<!-- End of Main Content -->
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Footer -->
+<footer class="sticky-footer bg-white">
+  <div class="container my-auto">
+    <div class="copyright text-center my-auto">
+      <span>Copyright &copy; Your Website 2019</span>
+    </div>
+  </div>
+</footer>
+<!-- End of Footer -->
+</div>
+<!-- End of Content Wrapper -->
+</div>
+<!-- End of Page Wrapper -->
 
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+  <i class="fas fa-angle-up"></i>
+</a>
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Select "Logout" below if you are ready to end your current session.
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">
+          Cancel
+        </button>
+        <a class="btn btn-primary" href="login">Logout</a>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <!-- Page level plugins -->
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<!-- Bootstrap core JavaScript-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
-  </body>
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="js/sb-admin-2.min.js"></script>
+
+<!-- Page level plugins -->
+<script src="vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="js/demo/datatables-demo.js"></script>
+</body>
+
 </html>

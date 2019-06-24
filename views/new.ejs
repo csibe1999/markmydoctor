@@ -1,199 +1,204 @@
 <%- include head%>
-  <title>Doctor</title>
+<title>Doctor</title>
 <%- include body%>
 
-        <!-- Begin Page Content -->
-        <div class="container-fluid h-100">
+<!-- Begin Page Content -->
+<div class="container-fluid h-100">
 
-          <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">ÚJ DOKTOR FELVÉTELE</h1>
-          </div>
-          
-          <form method="POST">
-            <div class="row">
-              <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-danger shadow h-100 py-2">
-                  <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                      <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Név</div>
-                        <input type="text" name="name" placeholder="Név..." class="form-control form-control-user">
-                      </div>
-                      <div class="col-auto">
-                        <i class="fas fa-plus-square fa-3x text-gray-300"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-
-            
-          <!-- Content Row -->
-            <div class="row">
-            
-              <!-- Earnings (Monthly) Card Example -->
-              <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-primary shadow h-100 py-2">
-                  <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                      <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Szakterület</div>
-                        <input type="text" name="spec" placeholder="Szakterület..." class="form-control form-control-user">
-                      </div>
-                      <div class="col-auto">
-                        <i class="fas fa-plus-square fa-3x text-gray-300"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-
-              <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-success shadow h-100 py-2">
-                  <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                      <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Átlagos várakozási idő</div>
-                          <div class="row">
-                            <div class="col-9">
-                              <input type="text" name="wait" placeholder="Idő..." class="form-control form-control-user ">
-                            </div>
-                            <div class="h5 mb-0 col-auto font-weight-bold text-gray-800">Nap</div>
-                          </div>
-                        
-                      </div>
-                      <div class="col-auto">
-                        <i class="fas fa-clock fa-2x text-gray-300"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-info shadow h-100 py-2">
-                  <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                      <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Elégedettség</div>
-                          <div class="row no-gutters align-items-center">
-                            <div class="col">
-                              <div class="progresss progress-sm mr-2 h-100">
-                                  <input type="range" name="rate">
-                              </div>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="col-auto">
-                        <i class="fas fa-hands-helping fa-2x text-gray-300"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-warning shadow h-100 py-2">
-                  <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                      <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Kapcsolat</div>
-                        <input type="text" name="cont" placeholder="Telefon szám..." class="form-control form-control-user" width='400px'>
-                      </div>
-                      <div class="col-auto">
-                        <i class="fas fa-phone fa-2x text-gray-300"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-xl-3 col-md-6 mb-4">
-                  <div class="card border-bottom-danger shadow h-100 py-2">
-                    <div class="card-body">
-                      <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                          <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Hozzászólás</div>
-                         
-                          <textarea rows="3" cols="80" name="comment" placeholder="Hozzászólás..." class="form-control form-control-user" style="resize:none"></textarea>
-                        </div>
-                        <div class="col-auto">
-                          <i class="fas fa-comments fa-2x text-gray-300"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            </div>
-            
-            <div class="row col-xl-3 col-md-6 mb-4">
-              <input type="submit" value="Mentés" class="btn btn-primary btn-user btn-block"/>
-            </div>
-            
-
-          </form>
-
-        </div>
-        <!-- /.container-fluid -->
-
-      </div>
-      <!-- End of Main Content -->
-
-     <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2019</span>
-          </div>
-        </div>
-      </footer>
-      <!-- End of Footer -->
-
-    </div>
-    <!-- End of Content Wrapper -->
-
+  <!-- Page Heading -->
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">ÚJ DOKTOR FELVÉTELE</h1>
   </div>
-  <!-- End of Page Wrapper -->
 
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
-
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+  <form method="POST" oninput="range1value.value = rate.valueAsNumber">
+    <div class="row">
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-danger shadow h-100 py-2">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Név</div>
+                <input type="text" name="name" placeholder="Név..." class="form-control form-control-user">
+              </div>
+              <div class="col-auto">
+                <i class="fas fa-plus-square fa-3x text-gray-300"></i>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+
+
+
+    <!-- Content Row -->
+    <div class="row">
+
+      <!-- Earnings (Monthly) Card Example -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Szakterület</div>
+                <input type="text" name="spec" placeholder="Szakterület..." class="form-control form-control-user">
+              </div>
+              <div class="col-auto">
+                <i class="fas fa-plus-square fa-3x text-gray-300"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-success shadow h-100 py-2">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Átlagos várakozási idő</div>
+                <div class="row">
+                  <div class="col-9">
+                    <input type="text" name="wait" placeholder="Idő..." class="form-control form-control-user ">
+                  </div>
+                  <div class="h5 mb-0 col-auto font-weight-bold text-gray-800">Nap</div>
+                </div>
+
+              </div>
+              <div class="col-auto">
+                <i class="fas fa-clock fa-2x text-gray-300"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-info shadow h-100 py-2">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Elégedettség</div>
+                <div class="row no-gutters align-items-center">
+                  <div class="col-auto">
+                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800" name="range1value" for="range1"><output
+                        name="range1value" for="range1">50</output>%</div>
+                  </div>
+                  <div class="col">
+                    <div class="progresss progress-sm mr-2 h-100">
+                      <input type="range" name="rate">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto">
+                <i class="fas fa-hands-helping fa-2x text-gray-300"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-warning shadow h-100 py-2">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Kapcsolat</div>
+                <input type="text" name="cont" placeholder="Telefon szám..." class="form-control form-control-user"
+                  width='400px'>
+              </div>
+              <div class="col-auto">
+                <i class="fas fa-phone fa-2x text-gray-300"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-bottom-danger shadow h-100 py-2">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Hozzászólás</div>
+                <textarea rows="3" cols="80" name="comment" placeholder="Hozzászólás..."
+                  class="form-control form-control-user" style="resize:none"></textarea>
+              </div>
+              <div class="col-auto">
+                <i class="fas fa-comments fa-2x text-gray-300"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row col-xl-3 col-md-6 mb-4">
+      <input type="submit" value="Mentés" class="btn btn-primary btn-user btn-block" />
+    </div>
+
+
+  </form>
+
+</div>
+<!-- /.container-fluid -->
+
+</div>
+<!-- End of Main Content -->
+
+<!-- Footer -->
+<footer class="sticky-footer bg-white">
+  <div class="container my-auto">
+    <div class="copyright text-center my-auto">
+      <span>Copyright &copy; Your Website 2019</span>
+    </div>
   </div>
+</footer>
+<!-- End of Footer -->
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</div>
+<!-- End of Content Wrapper -->
 
-  <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+</div>
+<!-- End of Page Wrapper -->
 
-  <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin-2.min.js"></script>
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+  <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+        <a class="btn btn-primary" href="login.html">Logout</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap core JavaScript-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="js/sb-admin-2.min.js"></script>
 
 </body>
 

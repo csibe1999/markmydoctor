@@ -11382,7 +11382,7 @@
 				 *      $('#example').dataTable( {
 				 *        "language": {
 				 *          "paginate": {
-				 *            "next": "Következő oldal"
+				 *            "next": "Következő"
 				 *          }
 				 *        }
 				 *      } );
