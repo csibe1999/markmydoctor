@@ -11,7 +11,6 @@ module.exports = function(objectrepository) {
       doctor.rate.push(rate);
       doctor.comment.push(comment);
       doctor.save();
-      console.log(rate + " " + comment);
       return res.redirect("/doctor/" + req.params.id);
     });
   };

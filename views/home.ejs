@@ -1,9 +1,9 @@
 <%- include head%>
 <title>Doctors</title>
-<%- include body%>
+<%- include bodyhome%>
 
 <!-- Begin Page Content -->
-<div class="container-fluid">
+<div class="container-fluid ">
   <!-- DataTales Example -->
   <div class="card shadow mb-4">
     <div class="card-header py-3">
@@ -11,12 +11,12 @@
     </div>
     <div class="card-body">
       <div class="table-responsive">
-        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <table class="table table-bordered " id="dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
               <th>Orvos neve</th>
               <th>Szakterület</th>
-              <th>Átlagos várakozási idő (nap)</th>
+              <th>Átlagos várakozási idő</th>
               <th>Átlag Elégedettség</th>
               <th>Telefon</th>
               <th>Komment</th>
@@ -26,7 +26,7 @@
             <tr>
               <th>Orvos neve</th>
               <th>Szakterület</th>
-              <th>Átlagos várakozási idő (nap)</th>
+              <th>Átlagos várakozási idő</th>
               <th>Átlag Elégedettség</th>
               <th>Telefon</th>
               <th>Komment</th>
@@ -44,13 +44,13 @@
               <td><a style="display:block; color:#858796; text-decoration:none;"
                   href="doctor/<%=value.id%>"><%=value.spec%></a></td>
               <td><a style="display:block; color:#858796; text-decoration:none;"
-                  href="doctor/<%=value.id%>"><%=value.wait%></a></td>
+                  href="doctor/<%=value.id%>"><%=value.wait%> nap</a></td>
               <td><a style="display:block; color:#858796; text-decoration:none;"
                   href="doctor/<%=value.id%>"><%=value.sumrate%>%</a></td>
               <td><a style="display:block; color:#858796; text-decoration:none;"
                   href="doctor/<%=value.id%>"><%=value.cont%></a></td>
               <td><a style="display:block; color:#858796; text-decoration:none;"
-                  href="doctor/<%=value.id%>"><%=value.comment%></a></td>
+                  href="doctor/<%=value.id%>"><%=value.comment.length%> db</a></td>
             </tr>
             <%});%>
 

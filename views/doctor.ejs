@@ -97,102 +97,94 @@
   <form name="myform" method="POST" oninput="range1value.value = rate.valueAsNumber">
     <div class="row">
       <div class="col-lg-6 mb-4">
-        <div class="card shadow mb-4">
+        <div class="card shadow h-100 mb-4">
           <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Hozzászólás</h6>
           </div>
           <div class="card-body">
-            <textarea rows="3" cols="80" name="comment" placeholder="Hozzászólás..."
+            <textarea rows="2" cols="80" name="comment" placeholder="Hozzászólás..."
               class="form-control form-control-user" style="resize:none"></textarea>
           </div>
         </div>
       </div>
-      <!-- Content Column -->
 
-      <div class="col-lg-6 mb-4">
-        <!-- Color System -->
-        <div class="mh-100">
-          <div class="col-lg-6 mb-4">
-            <div class="card text-white shadow">
-              <div class="card-body">
+      <div class="col-xl-3 col-md-6 mb-4 mh-100">
+        <div class="card text-white shadow mb-4">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Elégedettség</div>
                 <div class="row no-gutters align-items-center">
-                  <div class="col mr-2">
-                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Elégedettség</div>
-                    <div class="row no-gutters align-items-center">
-                      <div class="col-auto">
-                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800" name="range1value" for="range1"><output
-                            name="range1value" for="range1">50</output>%</div>
-                      </div>
-                      <div class="col">
-                        <div class="progresss progress-sm mr-2 h-100">
-                          <input type="range" name="rate">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                   <div class="col-auto">
-                    <i class="fas fa-hands-helping fa-2x text-gray-300"></i>
+                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800" name="range1value" for="range1"><output
+                        name="range1value" for="range1">50</output>%</div>
+                  </div>
+                  <div class="col">
+                    <div class="progresss progress-sm mr-2 h-100">
+                      <input type="range" name="rate">
+                    </div>
                   </div>
                 </div>
               </div>
+              <div class="col-auto">
+                <i class="fas fa-hands-helping fa-2x text-gray-300"></i>
+              </div>
             </div>
           </div>
-          <div class="col-lg-6 mb-4">
-            <input type="submit" name="" value="Mentés" class="btn btn-primary btn-user btn-block">
-          </div>
+        </div>
+        <div>
+          <input type="submit" name="" value="Mentés" class="btn btn-primary btn-user btn-block">
         </div>
       </div>
     </div>
   </form>
 
-
   <%# //////////////////////////////////////// %>
   <!-- Content Row -->
   <%for(let i =doctor.rate.length-1;i>=0;i--){%>
-    <div class="row">
-      <div class="col-lg-6 mb-4">
-        <div class="card shadow mb-4">
-          <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Hozzászólás</h6>
-          </div>
-          <div class="card-body">
-            <p><%= doctor.comment[i]%></p>
-          </div>
+  <div class="row">
+    <div class="col-lg-6 mb-4">
+      <div class="ard shadow h-100 mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Hozzászólás</h6>
+        </div>
+        <div class="card-body">
+          <p><%= doctor.comment[i]%></p>
         </div>
       </div>
-      <!-- Content Column -->
-      <div class="col-lg-6 mb-4">
-        <!-- Color System -->
-        <div class="row mh-100">
-          <div class="col-lg-6 mb-4">
-            <div class="card text-white shadow">
-              <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                  <div class="col mr-2">
-                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Elégedettség</div>
-                    <div class="row no-gutters align-items-center">
-                      <div class="col-auto">
-                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><%=doctor.rate[i]%>%</div>
-                      </div>
-                      <div class="col">
-                        <div class="progress progress-sm mr-2">
-                          <div class="progress-bar bg-info" role="progressbar" style="width: <%-doctor.rate[i]%>%"
-                            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-auto">
-                    <i class="fas fa-hands-helping fa-2x text-gray-300"></i>
+    </div>
+
+    <div class="col-xl-3 col-md-6 mb-4 mh-100">
+      <div class="card text-white shadow">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Elégedettség</div>
+              <div class="row no-gutters align-items-center">
+                <div class="col-auto">
+                  <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><%=doctor.rate[i]%>%</div>
+                </div>
+                <div class="col">
+                  <div class="progress progress-sm mr-2">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: <%-doctor.rate[i]%>%"
+                      aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
               </div>
+            </div>
+            <div class="col-auto">
+              <i class="fas fa-hands-helping fa-2x text-gray-300"></i>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
   <%}%>
+  
+</div>
+</div>
+
   <% //////////////////////////////////////// %>
 
 
