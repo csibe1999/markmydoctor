@@ -76,3 +76,4 @@ typings/
 .fusebox/
 middleware/user/forgotMW.js
 middleware/user/registeruserMW.js
+config/db.js
