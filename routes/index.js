@@ -1,6 +1,10 @@
 const renderMW = require('../middleware/renderMW');
+const authMW = require('../middleware/authMW');
+
 const registeruserMW = require('../middleware/user/registeruserMW.js');
 const loginuserMW = require('../middleware/user/loginuserMW.js');
+const verifyemailMW = require('../middleware/user/verifyemailMW.js');
+const forgotMW = require('../middleware/user/forgotMW.js');
 
 
 const savedoctorMW = require('../middleware/doctor/savedoctorMW.js');
@@ -26,24 +30,34 @@ module.exports = function (app) {
         renderMW(objRepo, 'doctor'));
     
     app.get('/new',
+        authMW(objRepo),
         renderMW(objRepo,'new'));
     app.post('/new',
         savedoctorMW(objRepo));
 
+    app.get('/mail',
+        renderMW(objRepo, 'mail'));
     
     app.get('/login',
         renderMW(objRepo, 'login'));
     app.post('/login',
         loginuserMW(objRepo));
 
+        
+    app.get('/:email/:token',
+        
+        verifyemailMW(objRepo));
 
     app.get('/register',
         renderMW(objRepo, 'register'));
     app.post('/register',
-        registeruserMW(objRepo));
+        registeruserMW(objRepo),
+        renderMW(objRepo, 'register'));
 
     app.get('/forgot',
         renderMW(objRepo, 'forgot'));
+    app.post('/forgot',
+        forgotMW(objRepo));
 
     app.get('/',
         getdoctorsMW(objRepo),

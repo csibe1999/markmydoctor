@@ -17,10 +17,10 @@ module.exports = function (objectrepository) {
         Usermodel.findOne({email: req.body.email}, (err, user) => {
             if(!user){
                 console.log("nincs ilyen user");
-                return res.redirect('/login');
+                return res.redirect('/register');
             }
             if (bcrypt.compareSync(req.body.password, user.password)) {
-                /* req.session.email=req.body.email; */
+                req.session.email = req.body.email;
                 console.log("bent");
                 return res.redirect('/');
             }

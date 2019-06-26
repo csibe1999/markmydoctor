@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-
+const session = require('express-session')
 
 app.set("view engine", "ejs");
 app.use(express.static("static"));
@@ -8,6 +8,12 @@ app.use(express.static("static"));
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+
+app.use(session({
+  secret: 'keyboard cat'
+}));
+
 
 
 
