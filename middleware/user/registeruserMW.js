@@ -15,7 +15,6 @@ module.exports = function (objectrepository) {
     return function (req, res, next) {
 
         if (!req.body.email || !req.body.password || !req.body.repassword) {
-            console.log("addj meg mindent");
             return res.redirect('/register');
         }
         if (req.body.password === req.body.repassword) {
@@ -23,11 +22,9 @@ module.exports = function (objectrepository) {
                 email: req.body.email
             }, (err, user) => {
                 if (user) {
-                    console.log("van ilyen user");
                     return res.redirect('/register');
                 } else {
                     req.session.email = req.body.email;
-                    console.log('reg');
                     res.locals.user = new Usermodel();
                     res.locals.user.email = req.body.email;
                     res.locals.user.level = 1000;
