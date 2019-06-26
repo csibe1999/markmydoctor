@@ -16,8 +16,6 @@ app.use(session({
   /* cookie: { secure: true } */
 }));
 
-
-
 require("./routes/index")(app);
 
 app.use((err, req, res, next) => {
