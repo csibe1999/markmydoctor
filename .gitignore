@@ -77,3 +77,4 @@ typings/
 middleware/user/forgotMW.js
 middleware/user/registeruserMW.js
 config/db.js
+config/db.js
