@@ -10,7 +10,6 @@ module.exports = function (objectrepository) {
             console.log("lépj be")
         } else {
             Usermodel.findOne({email: req.session.email}, function (err, user) {
-                console.log(user);
                 if (user.level === 1000) {
                     res.redirect('/mail');
                 }

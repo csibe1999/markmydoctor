@@ -10,11 +10,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
-app.use(session({
+/* app.use(session({
   secret: 'keyboard cat'
+})); */
+
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+  /* cookie: { secure: true } */
 }));
-
-
 
 
 
