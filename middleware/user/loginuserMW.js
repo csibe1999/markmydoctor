@@ -26,7 +26,6 @@ module.exports = function (objectrepository) {
             {
                 return res.redirect('/login');
             }
-            return next();
         });
     };
 };
