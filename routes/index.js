@@ -5,6 +5,7 @@ const registeruserMW = require('../middleware/user/registeruserMW.js');
 const loginuserMW = require('../middleware/user/loginuserMW.js');
 const verifyemailMW = require('../middleware/user/verifyemailMW.js');
 const forgotMW = require('../middleware/user/forgotMW.js');
+const logoutMW = require('../middleware/user/logoutMW.js');
 
 
 const savedoctorMW = require('../middleware/doctor/savedoctorMW.js');
@@ -37,15 +38,16 @@ module.exports = function (app) {
 
     app.get('/mail',
         renderMW(objRepo, 'mail'));
-    
+
+    app.get('/logout',
+        logoutMW(objRepo));
+
     app.get('/login',
         renderMW(objRepo, 'login'));
     app.post('/login',
         loginuserMW(objRepo));
-
         
     app.get('/:email/:token',
-        
         verifyemailMW(objRepo));
 
     app.get('/register',

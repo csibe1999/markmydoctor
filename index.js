@@ -8,12 +8,11 @@ app.use(express.static("static"));
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
-app.use(session({
-  secret: 'keyboard cat',
-  resave: false,
-  saveUninitialized: true,
-  /* cookie: { secure: true } */
+var cookieSession = require('cookie-session')
+app.use(cookieSession({
+  name: 'session',
+  keys: ['key1', 'key2'],
+  maxAge: 1000*60*60
 }));
 
 require("./routes/index")(app);
