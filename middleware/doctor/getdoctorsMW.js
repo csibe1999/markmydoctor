@@ -18,6 +18,7 @@ module.exports = function(objectrepository) {
       }
       doctor.sumrate = sum;
       res.locals.doctor = doctor;
+      for(let i =0;i<doctor.length;i++)doctor[i].save();
       return next();
     });
   };
