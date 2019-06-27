@@ -1,17 +1,18 @@
 const renderMW = require('../middleware/renderMW');
 const authMW = require('../middleware/authMW');
+const isloggedMW = require('../middleware/isloggedMW');
 
-const registeruserMW = require('../middleware/user/registeruserMW.js');
-const loginuserMW = require('../middleware/user/loginuserMW.js');
-const verifyemailMW = require('../middleware/user/verifyemailMW.js');
-const forgotMW = require('../middleware/user/forgotMW.js');
-const logoutMW = require('../middleware/user/logoutMW.js');
+const registeruserMW = require('../middleware/user/registeruserMW');
+const loginuserMW = require('../middleware/user/loginuserMW');
+const verifyemailMW = require('../middleware/user/verifyemailMW');
+const forgotMW = require('../middleware/user/forgotMW');
+const logoutMW = require('../middleware/user/logoutMW');
 
 
-const savedoctorMW = require('../middleware/doctor/savedoctorMW.js');
-const getdoctorsMW = require('../middleware/doctor/getdoctorsMW.js');
-const getdoctorMW = require('../middleware/doctor/getdoctorMW.js');
-const save_comment_rateMW = require('../middleware/doctor/save-comment-rateMW.js');
+const savedoctorMW = require('../middleware/doctor/savedoctorMW');
+const getdoctorsMW = require('../middleware/doctor/getdoctorsMW');
+const getdoctorMW = require('../middleware/doctor/getdoctorMW');
+const save_comment_rateMW = require('../middleware/doctor/save-comment-rateMW');
 
 const Usermodel = require('../models/user');
 const Doctormodell = require('../models/doctor');
@@ -27,6 +28,7 @@ module.exports = function (app) {
         getdoctorMW(objRepo),
         renderMW(objRepo, 'doctor'));
     app.post('/doctor/:id',
+        authMW(objRepo),
         save_comment_rateMW(objRepo),
         renderMW(objRepo, 'doctor'));
     
@@ -62,10 +64,12 @@ module.exports = function (app) {
         forgotMW(objRepo));
 
     app.get('/',
+        isloggedMW(objRepo),
         getdoctorsMW(objRepo),
         renderMW(objRepo, 'home'));
 
     app.get('/*',
+        isloggedMW(objRepo),
         getdoctorsMW(objRepo),
         renderMW(objRepo, 'home'));
     
