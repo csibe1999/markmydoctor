@@ -1,6 +1,7 @@
 const renderMW = require('../middleware/renderMW');
 const authMW = require('../middleware/authMW');
 const isloggedMW = require('../middleware/isloggedMW');
+const redirectMW = require('../middleware/redirectMW');
 
 const registeruserMW = require('../middleware/user/registeruserMW');
 const loginuserMW = require('../middleware/user/loginuserMW');
@@ -13,6 +14,7 @@ const savedoctorMW = require('../middleware/doctor/savedoctorMW');
 const getdoctorsMW = require('../middleware/doctor/getdoctorsMW');
 const getdoctorMW = require('../middleware/doctor/getdoctorMW');
 const save_comment_rateMW = require('../middleware/doctor/save-comment-rateMW');
+const searchdoctorMW = require('../middleware/doctor/searchdoctorMW');
 
 const Usermodel = require('../models/user');
 const Doctormodell = require('../models/doctor');
@@ -25,20 +27,25 @@ module.exports = function (app) {
 
     
     app.get('/doctor/:id',
+        isloggedMW(objRepo),
         getdoctorMW(objRepo),
         renderMW(objRepo, 'doctor'));
     app.post('/doctor/:id',
         authMW(objRepo),
+        redirectMW(objRepo),
         save_comment_rateMW(objRepo),
         renderMW(objRepo, 'doctor'));
     
     app.get('/new',
+        isloggedMW(objRepo),
         authMW(objRepo),
         renderMW(objRepo,'new'));
     app.post('/new',
+        redirectMW(objRepo), 
         savedoctorMW(objRepo));
 
     app.get('/mail',
+        isloggedMW(objRepo),
         renderMW(objRepo, 'mail'));
 
     app.get('/logout',
@@ -62,11 +69,21 @@ module.exports = function (app) {
         renderMW(objRepo, 'forgot'));
     app.post('/forgot',
         forgotMW(objRepo));
+    
+    app.get('/:search',
+        searchdoctorMW(objRepo),
+        isloggedMW(objRepo),
+        renderMW(objRepo, 'home'));
+    app.post('/:search',
+        redirectMW(objRepo));
 
     app.get('/',
         isloggedMW(objRepo),
         getdoctorsMW(objRepo),
         renderMW(objRepo, 'home'));
+
+    app.post('/',
+        redirectMW(objRepo));
 
     app.get('/*',
         isloggedMW(objRepo),

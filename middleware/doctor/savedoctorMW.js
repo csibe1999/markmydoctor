@@ -16,7 +16,7 @@ module.exports = function(objectrepository) {
     }
     res.locals.doctor = new Doctormodell();
     res.locals.doctor.name = req.body.name;
-    res.locals.doctor.spec = req.body.spec;
+    res.locals.doctor.spec = req.body.spec.charAt(0).toUpperCase() + req.body.spec.slice(1);
     res.locals.doctor.wait = req.body.wait;
     res.locals.doctor.rate = req.body.rate;
     res.locals.doctor.sumrate = req.body.rate;
