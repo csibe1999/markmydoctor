@@ -13431,8 +13431,8 @@ body.sidebar-toggled footer.sticky-footer {
     -webkit-appearance: none;
     height: 0.75rem;
     cursor: ew-resize;
-    background: #4e73e0;
-    box-shadow: -110px 0 0 110px #36b9cc;
+    background: #1d9166;
+    box-shadow: -130px 0 0 130px #1dc889;
   }
 
 }

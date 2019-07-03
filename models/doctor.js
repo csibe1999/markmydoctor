@@ -8,6 +8,7 @@ const Doctor= db.model('Doctor',{
     rate: [],
     sumrate: String,
     cont: String,
+    city: String,
     comment :[]
 });
 module.exports=Doctor;

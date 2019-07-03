@@ -4,7 +4,7 @@ module.exports = function(objectrepository) {
   const Doctormodell = requireOption(objectrepository, "Doctormodell");
 
   return function(req, res, next) {
-    //console.log(req.session);
+    //console.log('Cookies: ', req.cookies)
     Doctormodell.find({}, (err, doctor) => {
       if (err || !doctor) {
         return next(err);
@@ -14,9 +14,9 @@ module.exports = function(objectrepository) {
         for (let j = 0; j < doctor[i].rate.length; j++) {
           sum += parseInt(doctor[i].rate[j]);
         }
-        sum /= Math.round(doctor[i].rate.length);
+        sum /= doctor[i].rate.length;
       }
-      doctor.sumrate = sum;
+      doctor.sumrate = Math.round(sum * 100) / 100 .toString();
       res.locals.doctor = doctor;
       for(let i =0;i<doctor.length;i++)doctor[i].save();
       return next();

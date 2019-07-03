@@ -7,9 +7,16 @@
 <div class="container-fluid h-100">
 
   <!-- Page Heading -->
-  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <div class="d-sm-flex align-items-center justify-content-between mb-1">
     <h1 class="h3 mb-0 text-gray-800">ÚJ DOKTOR FELVÉTELE</h1>
   </div>
+  <div class="d-sm-flex align-items-center justify-content-between mb-1">
+    <h3 class="h4 mb-0 text-gray-600">Kötelező:név, szakterület, város</h3>
+  </div>
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h6 class="h6 mb-0 text-gray-500">Az komment csak értékeléssel együtt elfogadható</h6>
+  </div>
+
 
   <form method="POST" oninput="range1value.value = rate.valueAsNumber">
     <div class="row">
@@ -28,15 +35,7 @@
           </div>
         </div>
       </div>
-    </div>
 
-
-
-
-    <!-- Content Row -->
-    <div class="row">
-
-      <!-- Earnings (Monthly) Card Example -->
       <div class="col-xl-3 col-md-6 mb-4">
         <div class="card border-left-primary shadow h-100 py-2">
           <div class="card-body">
@@ -53,6 +52,24 @@
         </div>
       </div>
 
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-info shadow h-100 py-2">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Város</div>
+                <input type="text" name="city" placeholder="Város..." class="form-control form-control-user">
+              </div>
+              <div class="col-auto">
+                <i class="fas fa-city fa-3x text-gray-300"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
 
       <div class="col-xl-3 col-md-6 mb-4">
         <div class="card border-left-success shadow h-100 py-2">
@@ -66,7 +83,6 @@
                   </div>
                   <div class="h5 mb-0 col-auto font-weight-bold text-gray-800">Nap</div>
                 </div>
-
               </div>
               <div class="col-auto">
                 <i class="fas fa-clock fa-2x text-gray-300"></i>
@@ -77,19 +93,19 @@
       </div>
 
       <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-info shadow h-100 py-2">
+        <div class="card border-left-success shadow h-100 py-2">
           <div class="card-body">
             <div class="row no-gutters align-items-center">
               <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Elégedettség</div>
+                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Elégedettség</div>
                 <div class="row no-gutters align-items-center">
                   <div class="col-auto">
                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800" name="range1value" for="range1"><output
-                        name="range1value" for="range1">50</output>%</div>
+                        name="range1value" for="range1">0</output></div>
                   </div>
                   <div class="col">
                     <div class="progresss progress-sm mr-2 h-100">
-                      <input type="range" name="rate">
+                      <input type="range" min="0" max="5" value="0" name="rate">
                     </div>
                   </div>
                 </div>
@@ -103,11 +119,11 @@
       </div>
 
       <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-warning shadow h-100 py-2">
+        <div class="card border-left-success shadow h-100 py-2">
           <div class="card-body">
             <div class="row no-gutters align-items-center">
               <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Kapcsolat</div>
+                <div class="text-xs font-weight-bold text-successs text-uppercase mb-1">Kapcsolat</div>
                 <input type="text" name="cont" placeholder="Telefon szám..." class="form-control form-control-user"
                   width='400px'>
               </div>
@@ -121,11 +137,11 @@
     </div>
     <div class="row">
       <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-bottom-danger shadow h-100 py-2">
+        <div class="card border-bottom-success shadow h-100 py-2">
           <div class="card-body">
             <div class="row no-gutters align-items-center">
               <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Hozzászólás</div>
+                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Hozzászólás</div>
                 <textarea rows="3" cols="80" name="comment" placeholder="Hozzászólás..."
                   class="form-control form-control-user" style="resize:none"></textarea>
               </div>

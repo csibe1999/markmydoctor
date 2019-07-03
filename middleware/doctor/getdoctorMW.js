@@ -12,8 +12,8 @@ module.exports = function(objectrepository) {
       for (let i = 0; i < doctor.rate.length; i++) {
         sum += parseInt(doctor.rate[i]);
       }
-      let a = Math.round(sum / doctor.rate.length).toString();
-      doctor.sumrate = a;
+      let a = sum / doctor.rate.length.toString();
+      doctor.sumrate = Math.round(a * 100) / 100;
       res.locals.doctor = doctor;
       res.locals.doctor.save();
       return next();
