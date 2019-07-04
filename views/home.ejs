@@ -36,11 +36,8 @@
             </tr>
           </tfoot>
           <tbody>
-            
-            <%doctor.forEach(function (value) {%>
 
-            
-            
+            <%doctor.forEach(function (value) {%>
             <tr>
               <td><a style="display:block; color:#858796; text-decoration:none;"
                   href="doctor/<%=value.id%>"><%=value.name%></a></td>
@@ -52,8 +49,19 @@
                   href="doctor/<%=value.id%>"><%=value.sumrate%></a></td>
               <td><a style="display:block; color:#858796; text-decoration:none;"
                   href="doctor/<%=value.id%>"><%=value.city%></a></td>
-              <td><a style="display:block; color:#858796; text-decoration:none;"
-                  href="doctor/<%=value.id%>"><%=value.cont%></a></td>
+              <td><a style="display:block; color:#858796; text-decoration:none;" href="doctor/<%=value.id%>">
+                  <%if(value.cont){%>
+                  <div class="text-center">
+                    <a href="<%-value.cont%>">Telefonszám</a>
+                  </div>
+                  <%}else{%>
+                  <div class="text-center">
+                    <i class="fas fa-fw fa-phone-slash "></i>
+                  </div>
+                  <%}%>
+                  </a>
+                  </td>
+                  
               <td><a style="display:block; color:#858796; text-decoration:none;"
                   href="doctor/<%=value.id%>"><%=value.comment.length%> db</a></td>
             </tr>
@@ -113,21 +121,21 @@
 </div>
 
 <!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="js/sb-admin-2.min.js"></script>
+<script src="/js/sb-admin-2.min.js"></script>
 
 <!-- Page level plugins -->
-<script src="vendor/datatables/jquery.dataTables.min.js"></script>
-<script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="/vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
 <!-- Page level custom scripts -->
-<script src="js/demo/datatables-demo.js"></script>
+<script src="/js/demo/datatables-demo.js"></script>
 </body>
 
 </html>
