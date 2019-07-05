@@ -49,6 +49,15 @@
                       placeholder="Jelszó ismét" name="repassword">
                   </div>
                 </div>
+                <%if(message.error){%>
+                <div class="form-group">
+                  <div class="text-center">
+                    <p class="bg-gradient-danger btn-user text-gray-100">
+                      <%=message.error%>
+                    </p>
+                  </div>
+                </div>
+                <%}%>
                 <input type="submit" value="Regisztráció" class="btn btn-primary btn-user btn-block" />
               </form>
               <hr>

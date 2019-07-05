@@ -6,8 +6,8 @@ module.exports = function (objectrepository) {
 
     return function (req, res, next) {
         Usermodel.findOne({ email: req.params.email }, function(err, user) {
-            if (err) {
-              return res.redirect("/asd");
+            if (err||!user) {
+              return res.redirect("/");
             }
             if(user.verify===req.params.token)
             {

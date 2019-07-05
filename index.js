@@ -3,6 +3,8 @@ const app = express();
 const cookieSession = require('cookie-session')
 var cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser');
+var flash = require('connect-flash');
+
 
 app.set("view engine", "ejs");
 app.use(express.static("static"));
@@ -18,6 +20,8 @@ app.use(cookieSession({
 }));
 
 app.use(cookieParser());
+
+app.use(flash());
 
 require("./routes/index")(app);
 

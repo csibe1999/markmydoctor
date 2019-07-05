@@ -11,8 +11,9 @@ module.exports = function (objectrepository) {
 
     return function (req, res, next) {
         if (!req.body.email||!req.body.password) {
-            console.log("addj meg mindent");
-            return res.redirect('/login');
+            req.flash('error','Hibás adat')
+            res.locals.message = req.flash();
+            return next();
         }
         Usermodel.findOne({email: req.body.email}, (err, user) => {
             if(!user){
@@ -24,7 +25,9 @@ module.exports = function (objectrepository) {
             }
             else
             {
-                return res.redirect('/login');
+                req.flash('error','Hibás adat')
+                res.locals.message = req.flash();
+                return next();
             }
         });
     };

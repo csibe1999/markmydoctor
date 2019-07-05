@@ -4,7 +4,7 @@ module.exports = function(objectrepository) {
   const Doctormodell = requireOption(objectrepository, "Doctormodell");
 
   return function(req, res, next) {
-    //console.log('Cookies: ', req.cookies)
+    
     Doctormodell.find({}, (err, doctor) => {
       if (err || !doctor) {
         return next(err);

@@ -38,40 +38,40 @@
           <tbody>
 
             <%doctor.forEach(function (value) {%>
-            <tr>
-              <td><a style="display:block; color:#858796; text-decoration:none;"
-                  href="doctor/<%=value.id%>"><%=value.name%></a></td>
-              <td><a style="display:block; color:#858796; text-decoration:none;"
-                  href="doctor/<%=value.id%>"><%=value.spec%></a></td>
-              <td><a style="display:block; color:#858796; text-decoration:none;"
-                  href="doctor/<%=value.id%>"><%=value.wait%> nap</a></td>
-              <td><a style="display:block; color:#858796; text-decoration:none;"
-                  href="doctor/<%=value.id%>"><%=value.sumrate%></a></td>
-              <td><a style="display:block; color:#858796; text-decoration:none;"
-                  href="doctor/<%=value.id%>"><%=value.city%></a></td>
-              <td><a style="display:block; color:#858796; text-decoration:none;" href="doctor/<%=value.id%>">
-                  <%if(value.cont){%>
-                  <div class="text-center">
-                    <a href="<%-value.cont%>">Telefonszám</a>
-                  </div>
-                  <%}else{%>
-                  <div class="text-center">
-                    <i class="fas fa-fw fa-phone-slash "></i>
-                  </div>
-                  <%}%>
+    <tr>
+      <td><a style="display:block; color:#858796; text-decoration:none;" href="doctor/<%=value.id%>"><%=value.name%></a>
+      </td>
+      <td><a style="display:block; color:#858796; text-decoration:none;" href="doctor/<%=value.id%>"><%=value.spec%></a>
+      </td>
+      <td><a style="display:block; color:#858796; text-decoration:none;" href="doctor/<%=value.id%>"><%=value.wait%>
+          nap</a></td>
+      <td><a style="display:block; color:#858796; text-decoration:none;"
+          href="doctor/<%=value.id%>"><%=value.sumrate%></a></td>
+      <td><a style="display:block; color:#858796; text-decoration:none;" href="doctor/<%=value.id%>"><%=value.city%></a>
+      </td>
+      <td><a style="display:block; color:#858796; text-decoration:none;" href="doctor/<%=value.id%>">
+          <%if(value.cont){%>
+          <div class="text-center">
+            <a href="<%-value.cont%>">Telefonszám</a>
+          </div>
+          <%}else{%>
+          <div class="text-center">
+            <i class="fas fa-fw fa-phone-slash "></i>
+          </div>
+          <%}%>
                   </a>
                   </td>
                   
               <td><a style="display:block; color:#858796; text-decoration:none;"
                   href="doctor/<%=value.id%>"><%=value.comment.length%> db</a></td>
-            </tr>
-            <%});%>
+    </tr>
+    <%});%>
 
-          </tbody>
-        </table>
-      </div>
-    </div>
+    </tbody>
+    </table>
   </div>
+</div>
+</div>
 </div>
 <!-- /.container-fluid -->
 </div>

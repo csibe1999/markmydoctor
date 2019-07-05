@@ -2,6 +2,7 @@ const renderMW = require('../middleware/renderMW');
 const authMW = require('../middleware/authMW');
 const isloggedMW = require('../middleware/isloggedMW');
 const redirectMW = require('../middleware/redirectMW');
+const setdefaultMW = require('../middleware/setdefaultMW');
 
 const registeruserMW = require('../middleware/user/registeruserMW');
 const loginuserMW = require('../middleware/user/loginuserMW');
@@ -52,14 +53,18 @@ module.exports = function (app) {
         logoutMW(objRepo));
 
     app.get('/login',
+        setdefaultMW(),
         renderMW(objRepo, 'login'));
+        
     app.post('/login',
-        loginuserMW(objRepo));
+        loginuserMW(objRepo),
+        renderMW(objRepo, 'login'));
         
     app.get('/:email/:token',
         verifyemailMW(objRepo));
 
     app.get('/register',
+        setdefaultMW(),
         renderMW(objRepo, 'register'));
     app.post('/register',
         registeruserMW(objRepo),
@@ -74,10 +79,12 @@ module.exports = function (app) {
         searchdoctorMW(objRepo),
         isloggedMW(objRepo),
         renderMW(objRepo, 'home'));
+    
     app.post('/:search',
         redirectMW(objRepo));
 
     app.get('/',
+        setdefaultMW(),
         isloggedMW(objRepo),
         getdoctorsMW(objRepo),
         renderMW(objRepo, 'home'));
@@ -86,6 +93,7 @@ module.exports = function (app) {
         redirectMW(objRepo));
 
     app.get('/*',
+        setdefaultMW(),
         isloggedMW(objRepo),
         getdoctorsMW(objRepo),
         renderMW(objRepo, 'home'));
