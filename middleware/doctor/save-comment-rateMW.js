@@ -5,13 +5,13 @@ module.exports = function (objectrepository) {
 
   return function (req, res, next) {
     if (req.body.rate === "0") {
-      return res.redirect("/doctor/" + req.params.id);
+      req.flash('error', 'Kérem ne 0-ás értékelést adjon!');
+      res.locals.message = req.flash();
+      return next();
     } else {
       let rate = req.body.rate;
       let comment = req.body.comment;
-      Doctormodell.findOne({
-        _id: req.params.id
-      }, function (err, doctor) {
+      Doctormodell.findOne({_id: req.params.id}, function (err, doctor) {
         res.locals.doctor = doctor;
         doctor.rate.push(rate);
         doctor.comment.push(comment);

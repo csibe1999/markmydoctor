@@ -115,7 +115,18 @@
     </div>
   </div>
 
-  <!-- Content Row -->
+  <%if(message.error){%>
+  <div class="row">
+    <div class="col-lg-6 col-md-6 ">
+      <div class=" text-center">
+        <p class="btn bg-gradient-danger btn-user btn-block text-gray-100">
+          <%=message.error%>
+        </p>
+      </div>
+    </div>
+  </div>
+  <%}%>
+  
   <form name="myform" method="POST" oninput="range1value.value = rate.valueAsNumber">
     <div class="row">
       <div class="col-lg-6 mb-4">
