@@ -4,6 +4,7 @@ module.exports = function(objectrepository) {
   const Doctormodell = requireOption(objectrepository, "Doctormodell");
 
   return function(req, res, next) {
+    console.log(req.connection.remoteAddress.split(':')[3]);
     Doctormodell.find({}, (err, doctor) => {
       if (err || !doctor) {
         return next(err);
