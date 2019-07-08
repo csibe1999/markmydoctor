@@ -4,7 +4,6 @@ module.exports = function(objectrepository) {
   const Doctormodell = requireOption(objectrepository, "Doctormodell");
 
   return function(req, res, next) {
-    
     Doctormodell.find({}, (err, doctor) => {
       if (err || !doctor) {
         return next(err);

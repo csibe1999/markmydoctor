@@ -6,6 +6,7 @@ const User= db.model('User',{
     password: String,
     username: String,
     level: Number,
-    verify: String
+    verify: String,
+    date: Number
 });
 module.exports=User;
