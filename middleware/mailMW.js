@@ -1,14 +1,16 @@
 const nodemailer = require('nodemailer');
 module.exports.mailreg=function(too,token) {
     var transporter = nodemailer.createTransport({
-        service: 'gmail',
+        host:"mail.nethely.hu",
+        port: 465,
+        secure: true,
         auth: {
-            user: 'noreplymarkmy@gmail.com',
+            user: 'noreply@markmydoctor.szakdoga.net',
             pass: 'destreater'
         }
     });
     var mailOptions = {
-        from: 'MarkMyDoctor <noreplymarkmy@gmail.com>',
+        from: 'MarkMyDoctor <noreply@markmydoctor.szakdoga.net>',
         to: too,
         subject: 'Email cím megerősítés',
         text: 'http://markmydoctor.us.to/'+too+'/'+token,
@@ -23,14 +25,16 @@ module.exports.mailreg=function(too,token) {
   };
   module.exports.mailfor=function(too,token) {
     var transporter = nodemailer.createTransport({
-        service: 'gmail',
+        host:"mail.nethely.hu",
+        port: 465,
+        secure: true,
         auth: {
-            user: 'noreplymarkmy@gmail.com',
+            user: 'noreply@markmydoctor.szakdoga.net',
             pass: 'destreater'
         }
     });
      var mailOptions = {
-        from: 'MarkMyDoctor <noreplymarkmy@gmail.com>',
+        from: 'MarkMyDoctor <noreply@markmydoctor.szakdoga.net>',
         to: too,
         subject: 'Jelszó emlékeztető',
         text: 'Új jelszó: http://markmydoctor.us.to/password/'+too+'/'+token,
