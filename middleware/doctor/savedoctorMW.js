@@ -4,7 +4,6 @@ module.exports = function (objectrepository) {
   const Doctormodell = requireOption(objectrepository, "Doctormodell");
 
   return function (req, res, next) {
-    console.log();
     if (
       !req.body.name ||
       !req.body.spec ||
