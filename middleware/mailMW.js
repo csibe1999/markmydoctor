@@ -13,7 +13,7 @@ module.exports.mailreg=function(too,token) {
         from: 'MarkMyDoctor <noreply@markmydoctor.szakdoga.net>',
         to: too,
         subject: 'Email cím megerősítés',
-        text: 'http://markmydoctor.us.to/'+too+'/'+token,
+        text: 'http://markmydoctor.us.to/auth/'+too+'/'+token,
     };
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {

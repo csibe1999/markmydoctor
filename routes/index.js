@@ -27,18 +27,16 @@ module.exports = function (app) {
         Usermodel:Usermodel,
         Doctormodell:Doctormodell
     };
-
-    
     app.get('/doctor/:id',
         setdefaultMW(),
         isloggedMW(objRepo),
         getdoctorMW(objRepo),
         renderMW(objRepo, 'doctor'));
     app.post('/doctor/:id',
+        redirectMW(objRepo),
         authMW(objRepo),
         isloggedMW(objRepo),
         getdoctorMW(objRepo),
-        redirectMW(objRepo),
         save_comment_rateMW(objRepo),
         renderMW(objRepo, 'doctor'));
     
@@ -79,7 +77,7 @@ module.exports = function (app) {
         passwordchangeMW(objRepo),
         renderMW(objRepo, 'password'));
 
-    app.get('/:email/:token',
+    app.get('/auth/:email/:token',
         verifyemailMW(objRepo));
 
     app.get('/register',
@@ -96,20 +94,17 @@ module.exports = function (app) {
         forgotMW(objRepo),
         renderMW(objRepo, 'forgot'));
     
-    app.get('/:search',
+    app.get('/search/:search',
         searchdoctorMW(objRepo),
         isloggedMW(objRepo),
-        renderMW(objRepo, 'home'));
-    
-    app.post('/:search',
+        renderMW(objRepo, 'home')); 
+    app.post('/search/:search',
         redirectMW(objRepo));
 
     app.get('/',
-        
         isloggedMW(objRepo),
         getdoctorsMW(objRepo),
         renderMW(objRepo, 'home'));
-
     app.post('/',
         redirectMW(objRepo));
 

@@ -5,7 +5,7 @@ module.exports = function(objectrepository) {
 
   return function(req, res, next) {
     let a = new Date();
-    console.log(a.getFullYear()+"-"+a.getMonth()+"-"+a.getDate()+" "+a.getHours()+":"+a.getMinutes()+":"+a.getSeconds()+" : "+req.connection.remoteAddress);
+    //console.log(a.getFullYear()+"-"+a.getMonth()+"-"+a.getDate()+" "+a.getHours()+":"+a.getMinutes()+":"+a.getSeconds()+" : "+req.connection.remoteAddress);
     Doctormodell.find({}, (err, doctor) => {
       if (err || !doctor) {
         return next(err);
