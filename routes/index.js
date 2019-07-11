@@ -3,8 +3,9 @@ const authMW = require('../middleware/authMW');
 const isloggedMW = require('../middleware/isloggedMW');
 const redirectMW = require('../middleware/redirectMW');
 const setdefaultMW = require('../middleware/setdefaultMW');
-const URLvalidationMW = require('../middleware/URLvalidationMW');
+const wwwMW = require('../middleware/wwwMW');
 
+var fs = require('fs');
 const registeruserMW = require('../middleware/user/registeruserMW');
 const loginuserMW = require('../middleware/user/loginuserMW');
 const verifyemailMW = require('../middleware/user/verifyemailMW');
@@ -19,6 +20,7 @@ const getdoctorMW = require('../middleware/doctor/getdoctorMW');
 const save_comment_rateMW = require('../middleware/doctor/save-comment-rateMW');
 const searchdoctorMW = require('../middleware/doctor/searchdoctorMW');
 
+
 const Usermodel = require('../models/user');
 const Doctormodell = require('../models/doctor');
 
@@ -27,13 +29,16 @@ module.exports = function (app) {
         Usermodel:Usermodel,
         Doctormodell:Doctormodell
     };
+	app.get('/asd',
+        renderMW(objRepo,'asd'));
     app.get('/doctor/:id',
+        wwwMW(),
         setdefaultMW(),
         isloggedMW(objRepo),
         getdoctorMW(objRepo),
         renderMW(objRepo, 'doctor'));
     app.post('/doctor/:id',
-        redirectMW(objRepo),
+		redirectMW(objRepo),
         authMW(objRepo),
         isloggedMW(objRepo),
         getdoctorMW(objRepo),
@@ -41,6 +46,7 @@ module.exports = function (app) {
         renderMW(objRepo, 'doctor'));
     
     app.get('/new',
+        wwwMW(),
         setdefaultMW(),
         isloggedMW(objRepo),
         authMW(objRepo),
@@ -52,13 +58,16 @@ module.exports = function (app) {
         renderMW(objRepo,'new'));
 
     app.get('/mail',
+        wwwMW(),
         isloggedMW(objRepo),
         renderMW(objRepo, 'mail'));
 
     app.get('/logout',
+        wwwMW(),
         logoutMW(objRepo));
 
     app.get('/login',
+        wwwMW(),
         setdefaultMW(),
         renderMW(objRepo, 'login'));
         
@@ -67,6 +76,7 @@ module.exports = function (app) {
         renderMW(objRepo, 'login'));
 
     app.get('/password/:email/:token',
+        wwwMW(),
         isloggedMW(objRepo),
         setdefaultMW(),
         renderMW(objRepo, 'password'));
@@ -78,9 +88,11 @@ module.exports = function (app) {
         renderMW(objRepo, 'password'));
 
     app.get('/auth/:email/:token',
+        wwwMW(),
         verifyemailMW(objRepo));
 
     app.get('/register',
+        wwwMW(),
         setdefaultMW(),
         renderMW(objRepo, 'register'));
     app.post('/register',
@@ -88,6 +100,7 @@ module.exports = function (app) {
         renderMW(objRepo, 'register'));
 
     app.get('/forgot',
+        wwwMW(),
         setdefaultMW(),
         renderMW(objRepo, 'forgot'));
     app.post('/forgot',
@@ -95,20 +108,24 @@ module.exports = function (app) {
         renderMW(objRepo, 'forgot'));
     
     app.get('/search/:search',
+        wwwMW(),
         searchdoctorMW(objRepo),
         isloggedMW(objRepo),
-        renderMW(objRepo, 'home')); 
+        renderMW(objRepo, 'home'));
+    
     app.post('/search/:search',
         redirectMW(objRepo));
 
-    app.get('/',
-        isloggedMW(objRepo),
-        getdoctorsMW(objRepo),
+    app.get('/',getdoctorsMW(objRepo),
+        wwwMW(),
+        isloggedMW(objRepo), 
         renderMW(objRepo, 'home'));
+
     app.post('/',
         redirectMW(objRepo));
 
     app.get('/*',
+        wwwMW(),
         isloggedMW(objRepo),
         getdoctorsMW(objRepo),
         renderMW(objRepo, 'home'));

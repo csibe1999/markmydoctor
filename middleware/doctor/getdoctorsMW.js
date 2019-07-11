@@ -4,8 +4,9 @@ module.exports = function(objectrepository) {
   const Doctormodell = requireOption(objectrepository, "Doctormodell");
 
   return function(req, res, next) {
-    let a = new Date();
-    //console.log(a.getFullYear()+"-"+a.getMonth()+"-"+a.getDate()+" "+a.getHours()+":"+a.getMinutes()+":"+a.getSeconds()+" : "+req.connection.remoteAddress);
+	let a = new Date();
+	let b = parseInt(a.getHours())+1;
+	console.log(a.getFullYear()+"-"+a.getMonth()+"-"+a.getDate()+" "+b+":"+a.getMinutes()+":"+a.getSeconds()+" : "+req.connection.remoteAddress.split(':')[3]);
     Doctormodell.find({}, (err, doctor) => {
       if (err || !doctor) {
         return next(err);
