@@ -12043,6 +12043,63 @@ a:focus {
   justify-content: center;
 }
 
+.border-top-red {
+  border-top: 0.25rem solid #ff5347 !important;
+}
+
+.border-left-red {
+  border-left: 0.25rem solid #ff5347 !important;
+}
+
+.border-right-red {
+  border-right: 0.25rem solid #ff5347 !important;
+}
+
+.border-left-orange {
+  border-left: 0.25rem solid #ff9d4f !important;
+}
+
+.border-right-orange {
+  border-right: 0.25rem solid #ff9d4f !important;
+}
+
+.border-left-yellow {
+  border-left: 0.25rem solid #f5f263  !important;
+}
+
+.border-right-yellow {
+  border-right: 0.25rem solid #f5f263  !important;
+}
+
+.border-left-green {
+  border-left: 0.25rem solid #81d151 !important;
+}
+
+.border-right-green {
+  border-right: 0.25rem solid #81d151 !important;
+}
+
+.border-left-blue {
+  border-left: 0.25rem solid #42adc7 !important;
+}
+
+.border-right-blue {
+  border-right: 0.25rem solid #42adc7 !important;
+}
+
+.border-left-indigo {
+  border-left: 0.25rem solid #5b4db7!important;
+}
+
+.border-right-indigo {
+  border-right: 0.25rem solid #5b4db7!important;
+}
+
+.border-bottom-indigo {
+  border-bottom: 0.25rem solid #5b4db7!important;
+}
+
+
 .border-left-primary {
   border-left: 0.25rem solid #4e73df !important;
 }
@@ -12081,6 +12138,10 @@ a:focus {
 
 .border-bottom-warning {
   border-bottom: 0.25rem solid #f6c23e !important;
+}
+
+.border-top-danger {
+  border-top: 0.25rem solid #e74a3b !important;
 }
 
 .border-left-danger {
@@ -13405,11 +13466,7 @@ body.sidebar-toggled footer.sticky-footer {
   border-radius: 0.35rem;
 }
 
-@media screen and (max-width: 812px) {
-  .example {
-    width: 1200px;
-  }
-}
+
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   input[type='range'] {
     overflow: hidden;
@@ -13431,8 +13488,21 @@ body.sidebar-toggled footer.sticky-footer {
     -webkit-appearance: none;
     height: 0.75rem;
     cursor: ew-resize;
-    background: #1d9166;
-    box-shadow: -130px 0 0 130px #1dc889;
+    background: #4e73e0;
+    box-shadow: -200px 0 0 200px #36b9cc;
   }
-
+}
+@media (min-width: 576px) {
+  .phone {
+    visibility: hidden;
+    clear: both;
+    display: none;
+  }
+}
+@media (max-width: 576px) {
+  .pc {
+    visibility: hidden;
+    clear: both;
+    display: none;
+  }
 }

@@ -11,12 +11,15 @@ module.exports = function (objectrepository) {
     } else {
       let rate = req.body.rate;
       let comment = req.body.comment;
-      Doctormodell.findOne({_id: req.params.id}, function (err, doctor) {
+      Doctormodell.findOne({_link: req.params.link}, function (err, doctor) {
         res.locals.doctor = doctor;
         doctor.rate.push(rate);
         doctor.comment.push(comment);
         doctor.save();
-        return res.redirect("/doctor/" + req.params.id);
+        setTimeout(() => {
+          return res.redirect("/doctor/" + req.params.link);
+        }, 100);
+        
       });
     }
   };

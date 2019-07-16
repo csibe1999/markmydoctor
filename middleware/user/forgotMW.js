@@ -3,7 +3,7 @@ const requireOption = require('../requireOption');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
-const mailMW = require('../mailMW');
+const mailMW = require('../other/mailMW');
 
 const TokenGenerator = require('uuid-token-generator');
 const nodemailer = require('nodemailer');

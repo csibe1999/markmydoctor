@@ -78,3 +78,6 @@ config/db.js
 config/db.js
 *.crt
 *.key
+middleware/other/mailMW.js
+static/robots.txt
+static/sitemap.xml

@@ -1,11 +1,13 @@
 const renderMW = require('../middleware/renderMW');
 const authMW = require('../middleware/authMW');
-const isloggedMW = require('../middleware/isloggedMW');
-const redirectMW = require('../middleware/redirectMW');
-const setdefaultMW = require('../middleware/setdefaultMW');
-const wwwMW = require('../middleware/wwwMW');
 
-var fs = require('fs');
+const isloggedMW = require('../middleware/other/isloggedMW');
+const redirectMW = require('../middleware/other/redirectMW');
+const setdefaultMW = require('../middleware/other/setdefaultMW');
+const wwwMW = require('../middleware/other/wwwMW');
+const viewcounterMW = require('../middleware/other/viewcounterMW');
+
+
 const registeruserMW = require('../middleware/user/registeruserMW');
 const loginuserMW = require('../middleware/user/loginuserMW');
 const verifyemailMW = require('../middleware/user/verifyemailMW');
@@ -23,21 +25,22 @@ const searchdoctorMW = require('../middleware/doctor/searchdoctorMW');
 
 const Usermodel = require('../models/user');
 const Doctormodell = require('../models/doctor');
+const Ipmodell = require('../models/ip');
 
 module.exports = function (app) {
     const objRepo = {
         Usermodel:Usermodel,
-        Doctormodell:Doctormodell
+        Doctormodell:Doctormodell,
+        Ipmodell:Ipmodell
     };
-	app.get('/asd',
-        renderMW(objRepo,'asd'));
-    app.get('/doctor/:id',
+    app.get('/doctor/:link',
         wwwMW(),
+        viewcounterMW(objRepo),
         setdefaultMW(),
-        isloggedMW(objRepo),
+        isloggedMW(objRepo), 
         getdoctorMW(objRepo),
         renderMW(objRepo, 'doctor'));
-    app.post('/doctor/:id',
+    app.post('/doctor/:link',
 		redirectMW(objRepo),
         authMW(objRepo),
         isloggedMW(objRepo),
@@ -47,6 +50,7 @@ module.exports = function (app) {
     
     app.get('/new',
         wwwMW(),
+        viewcounterMW(objRepo),
         setdefaultMW(),
         isloggedMW(objRepo),
         authMW(objRepo),
@@ -59,15 +63,18 @@ module.exports = function (app) {
 
     app.get('/mail',
         wwwMW(),
+        viewcounterMW(objRepo),
         isloggedMW(objRepo),
         renderMW(objRepo, 'mail'));
 
     app.get('/logout',
         wwwMW(),
+        viewcounterMW(objRepo),
         logoutMW(objRepo));
 
     app.get('/login',
         wwwMW(),
+        viewcounterMW(objRepo),
         setdefaultMW(),
         renderMW(objRepo, 'login'));
         
@@ -77,6 +84,7 @@ module.exports = function (app) {
 
     app.get('/password/:email/:token',
         wwwMW(),
+        viewcounterMW(objRepo),
         isloggedMW(objRepo),
         setdefaultMW(),
         renderMW(objRepo, 'password'));
@@ -89,10 +97,12 @@ module.exports = function (app) {
 
     app.get('/auth/:email/:token',
         wwwMW(),
+        viewcounterMW(objRepo),
         verifyemailMW(objRepo));
 
     app.get('/register',
         wwwMW(),
+        viewcounterMW(objRepo),
         setdefaultMW(),
         renderMW(objRepo, 'register'));
     app.post('/register',
@@ -101,6 +111,7 @@ module.exports = function (app) {
 
     app.get('/forgot',
         wwwMW(),
+        viewcounterMW(objRepo),
         setdefaultMW(),
         renderMW(objRepo, 'forgot'));
     app.post('/forgot',
@@ -109,25 +120,28 @@ module.exports = function (app) {
     
     app.get('/search/:search',
         wwwMW(),
+        viewcounterMW(objRepo),
         searchdoctorMW(objRepo),
         isloggedMW(objRepo),
-        renderMW(objRepo, 'home'));
+        renderMW(objRepo, 'home2'));
     
     app.post('/search/:search',
         redirectMW(objRepo));
 
     app.get('/',getdoctorsMW(objRepo),
         wwwMW(),
+        viewcounterMW(objRepo),
         isloggedMW(objRepo), 
-        renderMW(objRepo, 'home'));
+        renderMW(objRepo, 'home2'));
 
     app.post('/',
         redirectMW(objRepo));
 
     app.get('/*',
         wwwMW(),
+        viewcounterMW(objRepo),
         isloggedMW(objRepo),
         getdoctorsMW(objRepo),
-        renderMW(objRepo, 'home'));
+        renderMW(objRepo, 'home2'));
     
 };

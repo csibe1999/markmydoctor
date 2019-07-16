@@ -4,8 +4,8 @@ module.exports = function(objectrepository) {
   const Doctormodell = requireOption(objectrepository, "Doctormodell");
 
   return function(req, res, next) {
-    Doctormodell.findOne({ _id: req.params.id }, function(err, doctor) {
-      if (err) {
+    Doctormodell.findOne({ _link: req.params.link }, function(err, doctor) {
+      if (err||!doctor) {
         return res.redirect("/");
       }
       let sum = 0;

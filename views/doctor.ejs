@@ -1,28 +1,20 @@
 <%- include head%>
-<title>Doctor</title>
+<link rel="icon" href="doc2.png"/>
+<title><%=doctor.name%> - MarkMyDoctor</title>
 <%- include body%>
-<%- include content%>
 
 
-
-
-<!-- Begin Page Content -->
 <div class="container-fluid">
-
-  <!-- Page Heading -->
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800"><%=doctor.name%></h1>
   </div>
-
-  <!-- Content Row -->
   <div class="row">
-    <!-- Earnings (Monthly) Card Example -->
     <div class="col-xl-3 col-md-6 mb-4">
-      <div class="card border-left-primary shadow h-100 py-2">
+      <div class="card border-left-primary border-top-primary shadow h-100 py-2">
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Szakterület</div>
+              <div class="font-weight-bold text-primary text-uppercase mb-1">Szakterület</div>
               <div class="h5 mb-0 font-weight-bold text-gray-800"><%=doctor.spec%></div>
             </div>
             <div class="col-auto">
@@ -38,7 +30,7 @@
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Város</div>
+              <div class=" font-weight-bold text-info text-uppercase mb-1">Város</div>
               <div class="h5 mb-0 font-weight-bold text-gray-800"><%=doctor.city%></div>
             </div>
             <div class="col-auto">
@@ -48,6 +40,7 @@
         </div>
       </div>
     </div>
+
   </div>
   <div class="row">
 
@@ -57,7 +50,7 @@
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Átlagos várakozási idő</div>
+              <div class=" font-weight-bold text-success text-uppercase mb-1">Átlagos várakozási idő</div>
               <div class="h5 mb-0 font-weight-bold text-gray-800"><%=doctor.wait%> Nap</div>
             </div>
             <div class="col-auto">
@@ -74,7 +67,7 @@
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Átlag Elégedettség</div>
+              <div class=" font-weight-bold text-success text-uppercase mb-1">Átlag Elégedettség</div>
               <div class="row no-gutters align-items-center">
                 <div class="col-auto">
                   <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><%=doctor.sumrate%></div>
@@ -101,9 +94,18 @@
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Kapcsolat</div>
+              <div class=" font-weight-bold text-success text-uppercase mb-1">Kapcsolat</div>
               <div class="h5 mb-0 font-weight-bold text-gray-800">
-                <a href="<%-doctor.cont%>">Telefonszám</a>
+                <%if(doctor.cont){%>
+                <div class="text-center">
+                  <a href="<%-doctor.cont%>">Telefonszám</a>
+                </div>
+                <%}else{%>
+                <div class="text-center">
+                  <i class="fas fa-fw fa-phone-slash "></i>
+                </div>
+                <%}%>
+                
               </div>
             </div>
             <div class="col-auto">
@@ -116,16 +118,16 @@
   </div>
 
   <%if(message.error){%>
-  <div class="row">
-    <div class="col-lg-6 col-md-6 ">
-      <div class=" text-center">
-        <p class="btn bg-gradient-danger btn-user btn-block text-gray-100">
-          <%=message.error%>
-        </p>
-      </div>
-    </div>
-  </div>
-  <%}%>
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 ">
+                    <div class=" text-center">
+                      <p class="btn bg-gradient-danger btn-user btn-block text-gray-100">
+                        <%=message.error%>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <%}%>
   
   <form name="myform" method="POST" oninput="range1value.value = rate.valueAsNumber">
     <div class="row">
@@ -146,7 +148,7 @@
           <div class="card-body">
             <div class="row no-gutters align-items-center">
               <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Elégedettség</div>
+                <div class=" font-weight-bold text-success text-uppercase mb-1">Elégedettség</div>
                 <div class="row no-gutters align-items-center">
                   <div class="col-auto">
                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800 range" name="range1value" for="range1">
@@ -173,47 +175,48 @@
   </form>
 
   <%# //////////////////////////////////////// %>
-  <!-- Content Row -->
-  <%for(let i =doctor.rate.length-1;i>=0;i--){%>
-  <div class="row">
-    <div class="col-lg-6 mb-4">
-      <div class="card shadow h-100 mb-4">
-        <div class="card-header py-3">
-          <h6 class="m-0 font-weight-bold text-success">Hozzászólás</h6>
-        </div>
-        <div class="card-body text-lg font-weight-bold text-gray-800">
-          <p><%= doctor.comment[i]%></p>
-        </div>
-      </div>
-    </div>
+                <!-- Content Row -->
+                <%for(let i =doctor.rate.length-1;i>=0;i--){%>
+                <div class="row">
+                  <div class="col-lg-6 mb-4">
+                    <div class="card shadow h-100 mb-4">
+                      <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-success">Hozzászólás</h6>
+                      </div>
+                      <div class="card-body text-lg font-weight-bold text-gray-800">
+                        <p><%= doctor.comment[i]%></p>
+                      </div>
+                    </div>
+                  </div>
 
-    <div class="col-xl-3 col-md-6 mb-4 mh-100">
-      <div class="card text-white shadow">
-        <div class="card-body">
-          <div class="row no-gutters align-items-center">
-            <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Elégedettség</div>
-              <div class="row no-gutters align-items-center">
-                <div class="col-auto">
-                  <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><%=doctor.rate[i]%></div>
-                </div>
-                <div class="col">
-                  <div class="progress progress-sm mr-2">
-                    <div class="progress-bar bg-success" role="progressbar" style="width:<%-doctor.rate[i]*20%>%"
-                      aria-valuenow="50" aria-valuemin="0" aria-valuemax="5"></div>
+                  <div class="col-xl-3 col-md-6 mb-4 mh-100">
+                    <div class="card text-white shadow">
+                      <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                          <div class="col mr-2">
+                            <div class=" font-weight-bold text-success text-uppercase mb-1">Elégedettség</div>
+                            <div class="row no-gutters align-items-center">
+                              <div class="col-auto">
+                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><%=doctor.rate[i]%></div>
+                              </div>
+                              <div class="col">
+                                <div class="progress progress-sm mr-2">
+                                  <div class="progress-bar bg-success" role="progressbar"
+                                    style="width:<%-doctor.rate[i]*20%>%" aria-valuenow="50" aria-valuemin="0"
+                                    aria-valuemax="5"></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-auto">
+                            <i class="fas fa-hands-helping fa-2x text-gray-300"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-auto">
-              <i class="fas fa-hands-helping fa-2x text-gray-300"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <%}%>
+                <%}%>
   
 </div>
 </div>
@@ -222,53 +225,53 @@
 
 
 
-</div>
-<!-- /.container-fluid -->
+              </div>
+              <!-- /.container-fluid -->
 
-</div>
-<!-- End of Main Content -->
+            </div>
+            <!-- End of Main Content -->
 
-<!-- Footer -->
-<footer class="sticky-footer bg-white">
-  <div class="container my-auto">
-    <div class="copyright text-center my-auto">
-      <span>Copyright &copy; MarkMyDoctor</span>
-    </div>
-  </div>
-</footer>
-<!-- End of Footer -->
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+              <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                  <span>Copyright &copy; MarkMyDoctor</span>
+                </div>
+              </div>
+            </footer>
+            <!-- End of Footer -->
 
-</div>
-<!-- End of Content Wrapper -->
+          </div>
+          <!-- End of Content Wrapper -->
 
-</div>
-<!-- End of Page Wrapper -->
+        </div>
+        <!-- End of Page Wrapper -->
 
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded" href="#page-top">
-  <i class="fas fa-angle-up"></i>
-</a>
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+          <i class="fas fa-angle-up"></i>
+        </a>
 
-<!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">×</span>
-        </button>
-      </div>
-      <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-      <div class="modal-footer">
-        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-        <a class="btn btn-primary" href="login.html">Logout</a>
-      </div>
-    </div>
-  </div>
-</div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="login.html">Logout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <%# <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
   integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
   integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -289,8 +292,8 @@
 
 <!-- Page level custom scripts -->
 <script src="/js/demo/chart-area-demo.js"></script>
-<script src="/js/demo/chart-pie-demo.js"></script>
+<script src="/js/demo/chart-pie-demo.js"></script> %>
 
-</body>
+        </body>
 
-</html>
+        </html>

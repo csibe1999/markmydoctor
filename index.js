@@ -1,4 +1,5 @@
-
+//const Doctormodell = require('./models/doctor');
+//Doctormodell.remove({},(err,doc)=>{});
 var fs = require('fs');
 var http = require('http');
 var https = require('https');
@@ -21,7 +22,6 @@ var httpsServer = https.createServer(credentials, app);
 
 app.set("view engine", "ejs");
 app.use(express.static("static"));
-app.use(express.static("asd"));
 
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -30,7 +30,7 @@ app.use(bodyParser.json());
 app.use(cookieSession({
   name: 'session',
   keys: ['key1', 'key2'],
-  /* maxAge: 1000*60*60 */
+  maxAge: 1000*60*60
 }));
 
 app.use(cookieParser());
