@@ -66,6 +66,20 @@ module.exports = function (app) {
         viewcounterMW(objRepo),
         isloggedMW(objRepo),
         renderMW(objRepo, 'mail'));
+    app.post('/mail',
+        redirectMW(objRepo), 
+        isloggedMW(objRepo),
+        renderMW(objRepo,'mail'));
+
+    app.get('/law',
+        wwwMW(),
+        viewcounterMW(objRepo),
+        isloggedMW(objRepo),
+        renderMW(objRepo, 'law'));
+    app.post('/law',
+        redirectMW(objRepo), 
+        isloggedMW(objRepo),
+        renderMW(objRepo,'law'));
 
     app.get('/logout',
         wwwMW(),

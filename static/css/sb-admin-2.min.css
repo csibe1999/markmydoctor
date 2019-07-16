@@ -7630,6 +7630,10 @@ button.bg-dark:hover {
   border-left: 0 !important;
 }
 
+.border-line {
+  border-color: #849ae6 !important;
+}
+
 .border-primary {
   border-color: #4e73df !important;
 }
@@ -12064,11 +12068,11 @@ a:focus {
 }
 
 .border-left-yellow {
-  border-left: 0.25rem solid #f5f263  !important;
+  border-left: 0.25rem solid #f7f317  !important;
 }
 
 .border-right-yellow {
-  border-right: 0.25rem solid #f5f263  !important;
+  border-right: 0.25rem solid #f7f317  !important;
 }
 
 .border-left-green {
