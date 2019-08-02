@@ -1,5 +1,6 @@
 //const Doctormodell = require('./models/doctor');
-//Doctormodell.remove({},(err,doc)=>{});
+/* const Ipmodell = require('./models/ip');
+Ipmodell.remove({},(err,doc)=>{}); */
 var fs = require('fs');
 var http = require('http');
 var https = require('https');
@@ -40,7 +41,7 @@ app.use(flash());
 require("./routes/index")(app);
 
 app.use((err, req, res, next) => {
-  res.end("Problem...");
+  res.end(err);
   console.log(err);
 });
 httpServer.listen(80,()=>{
