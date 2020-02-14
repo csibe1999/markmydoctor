@@ -5,7 +5,9 @@ module.exports = function(objectrepository) {
 
   return function(req, res, next) {
     if(!req.body.search)
-      return next();
+    {
+      return res.redirect('/');
+    }
     else return res.redirect('/search/'+req.body.search); 
   };
 };

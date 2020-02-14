@@ -4,7 +4,7 @@ module.exports = function(objectrepository) {
   const Doctormodell = requireOption(objectrepository, "Doctormodell");
 
   return function(req, res, next) {
-    Doctormodell.find({}).sort({ rate : 'desc'}).sort({ name : 'asc'}).limit(10).exec((err, doctor)=>{
+    Doctormodell.find({}).sort({ rate : 'desc'}).sort({ name : 'asc'}).exec((err, doctor)=>{
       if (err || !doctor) {
         return next(err);
       }

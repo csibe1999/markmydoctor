@@ -13,285 +13,203 @@
       <div class="col-12">
         <div class="h6 font-weight-bold phone">
           <%doctor.forEach(function (value) {%>
-          <div class="row mb-5">
+          <div class="row mb-5 ">
+            
 
-            <div class="col-12 mb-1">
-              <a style="display:block; color:#858796; text-decoration:none;" href="/doctor/<%=value._link%>">
-                <div class="card border-left-red border-right-red border-top-red shadow h-100 py-2">
-                  <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                      <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Név:</div>
-                        <h6 class="mb-0 font-weight-bold text-gray-800 text-truncate"><%=value.name%></h6>
-                      </div>
-                      <div class="col-auto">
-                        <i class="fas fa-user fa-2x text-gray-300"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-
-            <div class="col-12 mb-1">
-              <a style="display:block; color:#858796; text-decoration:none;" href="/doctor/<%=value._link%>">
-                <div class="card border-left-orange border-right-orange shadow h-100 py-2">
-                  <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                      <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Szakterület</div>
-                        <h6 class=" mb-0 font-weight-bold text-gray-800 text-truncate"><%=value.spec%></h6>
-                      </div>
-                      <div class="col-auto">
-                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-
-            <div class="col-12 mb-1">
-              <a style="display:block; color:#858796; text-decoration:none;" href="/doctor/<%=value._link%>">
-                <div class="card border-left-yellow border-right-yellow shadow h-100 py-2">
-                  <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                      <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Város</div>
-                        <h6 class="mb-0 font-weight-bold text-gray-800 text-truncate"><%=value.city%></h6>
-                      </div>
-                      <div class="col-auto">
-                        <i class="fas fa-city fa-2x text-gray-300" title="This symbolizes your being locked inside"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-
-            <div class="col-12 mb-1">
-              <a style="display:block; color:#858796; text-decoration:none;" href="/doctor/<%=value._link%>">
-                <div class="card border-left-green border-right-green shadow h-100 py-2">
-                  <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                      <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Átlagos várakozási idő
+              <div class="col-12 mb-1">
+                <a style="display:block; color:#858796; text-decoration:none;" href="/doctor/<%=value._link%>">
+                  <div class="card border-left-red border-right-red border-top-red shadow h-100 py-2">
+                    <div class="card-body">
+                      <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                          <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Név:</div>
+                          <h6 class="mb-0 font-weight-bold text-gray-800 text-truncate"><%=value.name%></h6>
                         </div>
-                        <h6 class="mb-0 font-weight-bold text-gray-800 text-truncate"><%=value.wait%> Nap</h6>
-                      </div>
-                      <div class="col-auto">
-                        <i class="fas fa-clock fa-2x text-gray-300"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-
-            <div class="col-12 mb-1">
-              <a style="display:block; color:#858796; text-decoration:none;" href="/doctor/<%=value._link%>">
-                <div class="card border-left-blue border-right-blue shadow h-100 py-2">
-                  <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                      <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Átlag Elégedettség</div>
-                        <div class="row no-gutters align-items-center">
-                          <div class="col-auto">
-                            <h6 class="mb-0 mr-3 font-weight-bold text-gray-800">
-                              <%if(!isNaN(value.sumrate)){%>
-                              <%=value.sumrate%>
-                              <%}%>
-                              
-                              </h6>
-                          </div>
-                          <div class="col">
-                            <div class="progress progress-sm mr-2">
-                              <div class="progress-bar bg-primary" role="progressbar"
-                                style="width:<%-value.sumrate*20%>%" aria-valuenow="50" aria-valuemin="0"
-                              aria-valuemax="5">
-                          </div>
+                        <div class="col-auto">
+                          <i class="fas fa-user fa-2x text-gray-300"></i>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="col-auto">
-                    <i class="fas fa-hands-helping fa-2x text-gray-300"></i>
-                  </div>
-                </div>
-            </div>
-          </div>
-          </a>
-        </div>
+                </a>
+              </div>
 
-        <div class="col-12 mb-1">
-          <a style="display:block; color:#858796; text-decoration:none;" href="/doctor/<%=value._link%>">
-            <div class="card border-left-indigo border-right-indigo border-bottom-indigo shadow h-100 py-2">
-              <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                  <div class="col mr-2">
-                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Kapcsolat</div>
-                    <div class="h6 mb-0 font-weight-bold text-gray-800 text-center">
-                      <%if(value.cont){%>
-                      <a href="<%-value.cont%>">Telefonszám</a>
-                      <%}else{%>
-                      <i class="fas fa-fw fa-phone-slash mt-2"></i>
-                      <%}%>                        
+              <div class="col-12 mb-1">
+                <a style="display:block; color:#858796; text-decoration:none;" href="/doctor/<%=value._link%>">
+                  <div class="card border-left-primary border-right-primary shadow h-100 py-2">
+                    <div class="card-body">
+                      <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                          <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Szakterület</div>
+                          <h6 class=" mb-0 font-weight-bold text-gray-800 text-truncate"><%=value.spec%></h6>
+                        </div>
+                        <div class="col-auto">
+                          <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        </div>
                       </div>
                     </div>
-                    <div class="col-auto">
-                      <i class="fas fa-comments fa-2x text-gray-300"></i>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-12 mb-1">
+                <a style="display:block; color:#858796; text-decoration:none;" href="/doctor/<%=value._link%>">
+                  <div class="card border-left-success border-right-success shadow h-100 py-2">
+                    <div class="card-body">
+                      <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                          <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Cím</div>
+                          <h6 class="mb-0 font-weight-bold text-gray-800 text-truncate"><%=value.city%></h6>
+                        </div>
+                        <div class="col-auto">
+                          <i class="fas fa-city fa-2x text-gray-300"
+                            title="This symbolizes your being locked inside"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-12 mb-1">
+                <a style="display:block; color:#858796; text-decoration:none;" href="/doctor/<%=value._link%>">
+                  <div class="card border-left-info border-right-info border-bottom-info shadow h-100 py-2">
+                    <div class="card-body">
+                      <div class="row no-gutters align-items-center">
+                        <div class="col-10 mr-2">
+                          <h6 class="mb-0 font-weight-bold text-gray-800 text-truncate">
+                            További információk
+                          </h6> 
+                      </div>
+                      <div class="col-auto">
+                        <i class="fas fa-info fa-2x text-gray-300"></i>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            </a>
+              </a>
           </div>
 
+          
+
           <%});%>
-                    </div>
-                  </div>
+                          </div>
+                        </div>
 
 
-                  <div class="table-responsive pc">
-                    <table class="table table-bordered " id="dataTable" width="100%" cellspacing="0">
-                      <thead>
-                        <tr>
-                          <th>Orvos neve</th>
-                          <th>Szakterület</th>
-                          <th>Átlagos várakozási idő</th>
-                          <th>Átlag Elégedettség</th>
-                          <th>Város</th>
-                          <th>Telefon</th>
-                          <th>Komment</th>
-                        </tr>
-                      </thead>
-                      <tfoot>
-                        <tr>
-                          <th>Orvos neve</th>
-                          <th>Szakterület</th>
-                          <th>Átlagos várakozási idő</th>
-                          <th>Átlag Elégedettség</th>
-                          <th>Város</th>
-                          <th>Telefon</th>
-                          <th>Komment</th>
-                        </tr>
-                      </tfoot>
-                      <tbody>
+                        <div class="table-responsive pc">
+                          <table class="table table-bordered " id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                              <tr>
+                                <th>Orvos neve</th>
+                                <th>Szakterület</th>
+                                <th>Átlagos várakozási idő</th>
+                                <th>Átlag Elégedettség</th>
+                                <th>Város</th>
+                                <th>Telefon</th>
+                                <th>Komment</th>
+                              </tr>
+                            </thead>
+                            <tfoot>
+                              <tr>
+                                <th>Orvos neve</th>
+                                <th>Szakterület</th>
+                                <th>Átlagos várakozási idő</th>
+                                <th>Átlag Elégedettség</th>
+                                <th>Város</th>
+                                <th>Telefon</th>
+                                <th>Komment</th>
+                              </tr>
+                            </tfoot>
+                            <tbody>
 
-                        <%doctor.forEach(function (value) {%>
-                        <tr>
-                          <td><a style="display:block; color:#858796; text-decoration:none;"
-                              href="/doctor/<%=value._link%>"><%=value.name%></a>
-                          </td>
-                          <td><a style="display:block; color:#858796; text-decoration:none;"
-                              href="/doctor/<%=value._link%>"><%=value.spec%></a>
-                          </td>
-                          <td><a style="display:block; color:#858796; text-decoration:none;"
-                              href="/doctor/<%=value._link%>"><%=value.wait%>
-                              nap</a></td>
-                          <td><a style="display:block; color:#858796; text-decoration:none;"
-                              href="/doctor/<%=value._link%>"><%if(!isNaN(value.sumrate)){%>
-                              <%=value.sumrate%>
-                              <%}%>
+                              <%doctor.forEach(function (value) {%>
+                              <tr>
+                                <td><a style="display:block; color:#858796; text-decoration:none;"
+                                    href="/doctor/<%=value._link%>"><%=value.name%></a>
+                                </td>
+                                <td><a style="display:block; color:#858796; text-decoration:none;"
+                                    href="/doctor/<%=value._link%>"><%=value.spec%></a>
+                                </td>
+                                <td><a style="display:block; color:#858796; text-decoration:none;"
+                                    href="/doctor/<%=value._link%>"><%=value.wait%>
+                                    nap</a></td>
+                                <td><a style="display:block; color:#858796; text-decoration:none;"
+                                    href="/doctor/<%=value._link%>"><%if(!isNaN(value.sumrate)){%>
+                                    <%=value.sumrate%>
+                                    <%}%>
                               </a></td>
                           <td><a style="display:block; color:#858796; text-decoration:none;"
                               href="/doctor/<%=value._link%>">
-                              <%if(value.city){%>
-                              <%=value.city%>
-                              <%}else{%>
-                              <span>&#8203;</span>
-                              <%}%>
+                                    <%if(value.city){%>
+                                    <%=value.city%>
+                                    <%}else{%>
+                                    <span>&#8203;</span>
+                                    <%}%>
                                 </a>
                             </td>
                             <td><a style="display:block; color:#858796; text-decoration:none;"
                                 href="/doctor/<%=value._link%>">
-                              <%if(value.cont){%>
-                              <div class="text-center">
-                                <a href="<%-value.cont%>">Telefonszám</a>
-                              </div>
-                              <%}else{%>
-                              <div class="text-center">
-                                <i class="fas fa-fw fa-phone-slash "></i>
-                              </div>
-                              <%}%>
+                                    <%if(value.cont){%>
+                                    <div class="text-center">
+                                      <a href="<%-value.cont%>">Telefonszám</a>
+                                    </div>
+                                    <%}else{%>
+                                    <div class="text-center">
+                                      <i class="fas fa-fw fa-phone-slash "></i>
+                                    </div>
+                                    <%}%>
                   </a>
                   </td>
                   
               <td><a style="display:block; color:#858796; text-decoration:none;"
                   href="/doctor/<%=value._link%>"><%=value.comment.length%> db</a></td>
-                        </tr>
-                        <%});%>
+                              </tr>
+                              <%});%>
 
-                      </tbody>
-                    </table>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.container-fluid -->
+              </div>
+              <!-- End of Main Content -->
+
+              <!-- Footer -->
+              <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                  <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Your Website 2019</span>
                   </div>
                 </div>
-              </div>
+              </footer>
+              <!-- End of Footer -->
             </div>
-            <!-- /.container-fluid -->
-        </div>
-        <!-- End of Main Content -->
-
-        <!-- Footer -->
-        <footer class="sticky-footer bg-white">
-          <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-              <span>Copyright &copy; Your Website 2019</span>
-            </div>
+            <!-- End of Content Wrapper -->
           </div>
-        </footer>
-        <!-- End of Footer -->
-      </div>
-      <!-- End of Content Wrapper -->
-    </div>
-    <!-- End of Page Wrapper -->
+         
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fas fa-angle-up"></i>
-    </a>
+          
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            Select "Logout" below if you are ready to end your current session.
-          </div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">
-              Cancel
-            </button>
-            <a class="btn btn-primary" href="login">Logout</a>
-          </div>
-        </div>
-      </div>
-    </div>
+          <!-- Bootstrap core JavaScript-->
+          <script src="/vendor/jquery/jquery.min.js"></script>
+          <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="/vendor/jquery/jquery.min.js"></script>
-    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+          <!-- Core plugin JavaScript-->
+          <%# <script src="/vendor/jquery-easing/jquery.easing.min.js"></script> %>
 
-    <!-- Core plugin JavaScript-->
-    <%# <script src="/vendor/jquery-easing/jquery.easing.min.js"></script> %>
+          <!-- Custom scripts for all pages-->
+          <script src="/js/sb-admin-2.min.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="/js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <%# <script src="/vendor/datatables/jquery.dataTables.min.js"></script>
+          <!-- Page level plugins -->
+          <%# <script src="/vendor/datatables/jquery.dataTables.min.js"></script>
         <script src="/vendor/datatables/dataTables.bootstrap4.min.js"></script> %>
 
-    <!-- Page level custom scripts -->
-    <%# <script src="/js/demo/datatables-demo.js"></script> %>
-    </body>
+          <!-- Page level custom scripts -->
+          <%# <script src="/js/demo/datatables-demo.js"></script> %>
+          </body>
 
-    </html>
+          </html>
