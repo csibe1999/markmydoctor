@@ -4,7 +4,7 @@ module.exports.mailreg=function(too,token) {
         service: 'gmail',
         auth: {
             user: 'noreplymarkmy@gmail.com',
-            pass: 'destreater'
+            pass: 'asd'
         }
     });
     var mailOptions = {
@@ -26,7 +26,7 @@ module.exports.mailreg=function(too,token) {
         service: 'gmail',
         auth: {
             user: 'noreplymarkmy@gmail.com',
-            pass: 'destreater'
+            pass: 'asd'
         }
     });
      var mailOptions = {

@@ -12048,15 +12048,15 @@ a:focus {
 }
 
 .border-top-red {
-  border-top: 0.25rem solid #ff5347 !important;
+  border-top: 0.25rem solid #e74a3b !important;
 }
 
 .border-left-red {
-  border-left: 0.25rem solid #ff5347 !important;
+  border-left: 0.25rem solid #e74a3b !important;
 }
 
 .border-right-red {
-  border-right: 0.25rem solid #ff5347 !important;
+  border-right: 0.25rem solid #e74a3b !important;
 }
 
 .border-left-orange {
@@ -12107,6 +12107,9 @@ a:focus {
 .border-left-primary {
   border-left: 0.25rem solid #4e73df !important;
 }
+.border-right-primary {
+  border-right: 0.25rem solid #4e73df !important;
+}
 
 .border-bottom-primary {
   border-bottom: 0.25rem solid #4e73df !important;
@@ -12123,6 +12126,9 @@ a:focus {
 .border-left-success {
   border-left: 0.25rem solid #1cc88a !important;
 }
+.border-right-success {
+  border-right: 0.25rem solid #1cc88a !important;
+}
 
 .border-bottom-success {
   border-bottom: 0.25rem solid #1cc88a !important;
@@ -12130,6 +12136,9 @@ a:focus {
 
 .border-left-info {
   border-left: 0.25rem solid #36b9cc !important;
+}
+.border-right-info {
+  border-right: 0.25rem solid #36b9cc !important;
 }
 
 .border-bottom-info {
