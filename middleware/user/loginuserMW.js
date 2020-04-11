@@ -1,5 +1,5 @@
 const requireOption = require('../requireOption');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 module.exports = function (objectrepository) {
 

@@ -142,8 +142,9 @@ module.exports = function (app) {
     app.post('/search/:search',
         redirectMW(objRepo));
 
-    app.get('/',getdoctorsMW(objRepo),
+    app.get('/',
         wwwMW(),
+        getdoctorsMW(objRepo),
         viewcounterMW(objRepo),
         isloggedMW(objRepo), 
         renderMW(objRepo, 'home2'));

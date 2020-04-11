@@ -44,14 +44,14 @@ app.use((err, req, res, next) => {
   res.end(err);
   console.log(err);
 });
-httpServer.listen(80,()=>{
-  console.log("80 is run");
-});
+
 // For https
 httpsServer.listen(443,()=>{
   console.log("443 is run");
 });
-
+httpServer.listen(80,()=>{
+  console.log("80 is run");
+});
 
 /* app.listen(3000, function() {
   console.log("Hello :3000");
