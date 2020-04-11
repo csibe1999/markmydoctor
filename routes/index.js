@@ -1,5 +1,6 @@
 const renderMW = require('../middleware/renderMW');
 const authMW = require('../middleware/authMW');
+const ip = require('../middleware/ip');
 
 const isloggedMW = require('../middleware/other/isloggedMW');
 const redirectMW = require('../middleware/other/redirectMW');
@@ -33,6 +34,9 @@ module.exports = function (app) {
         Doctormodell:Doctormodell,
         Ipmodell:Ipmodell
     };
+    /* app.get('/ip',
+        ip(objRepo),
+        renderMW(objRepo, 'ip')); */
     app.get('/doctor/:link',
         wwwMW(),
         viewcounterMW(objRepo),
@@ -143,6 +147,10 @@ module.exports = function (app) {
         redirectMW(objRepo));
 
     app.get('/',
+<<<<<<< HEAD
+=======
+        getdoctorsMW(objRepo),
+>>>>>>> 4a57a176937fc6ddce0227da3d9c6a8f4aebd76b
         wwwMW(),
         getdoctorsMW(objRepo),
         viewcounterMW(objRepo),
@@ -152,11 +160,11 @@ module.exports = function (app) {
     app.post('/',
         redirectMW(objRepo));
 
-    app.get('/*',
+    /* app.get('/*',
         wwwMW(),
         viewcounterMW(objRepo),
         isloggedMW(objRepo),
         getdoctorsMW(objRepo),
-        renderMW(objRepo, 'home2'));
+        renderMW(objRepo, 'home2')); */
     
 };

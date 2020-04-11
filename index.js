@@ -4,9 +4,9 @@ Ipmodell.remove({},(err,doc)=>{}); */
 var fs = require('fs');
 var http = require('http');
 var https = require('https');
-var privateKey  = fs.readFileSync('.key/key.key', 'utf8');
-var certificate = fs.readFileSync('.key/cert.crt', 'utf8');
-var car = fs.readFileSync('.key/ca.crt', 'utf8');
+var privateKey  = fs.readFileSync('.key/private.key', 'utf8');
+var certificate = fs.readFileSync('.key/certificate.crt', 'utf8');
+var car = fs.readFileSync('.key/ca_bundle.crt', 'utf8');
 
 const express = require("express");
 const app = express();
