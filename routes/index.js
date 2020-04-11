@@ -147,10 +147,6 @@ module.exports = function (app) {
         redirectMW(objRepo));
 
     app.get('/',
-<<<<<<< HEAD
-=======
-        getdoctorsMW(objRepo),
->>>>>>> 4a57a176937fc6ddce0227da3d9c6a8f4aebd76b
         wwwMW(),
         getdoctorsMW(objRepo),
         viewcounterMW(objRepo),
